@@ -4,5 +4,5 @@ This repo is from the Django-The-Esay-Way Book.
 And the author is Samuli Natri.<br>
 
 ## To-Do List in This Branch
-- [] To add further info about repo.
-- [] To make a good documentaion.
+- [ ] To add further info about repo.
+- [ ] To make a good documentaion.
