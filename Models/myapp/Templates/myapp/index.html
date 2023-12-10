@@ -1,0 +1,22 @@
+{%extends 'base/base.html'%}
+{%load static%}
+{%block content %}
+<h1>
+    Hello Morning Morining.
+</h1>
+<p class="lead">
+    This is from my first app.Enjoy yourself.
+</p>
+{%for flower in flowers%}
+<div class="card">
+    <div class="card-body">
+        <h5 clas="card-title">{{flower.title}}</h5>
+        <p clas"card-text">info comingsoon</p>
+        <a href="adminmyapp/flower/{{flower.id}}/change/"
+        class="card-link">Edit</a>
+        <a href="adminmyapp/flower/{{flower.id}}/delete/"
+        class="card-link">Delete</a>s
+    </div>
+</div>
+{%endfor%}
+{%endblock%}

@@ -1,0 +1,20 @@
+body{
+    padding-top: 5rem;
+
+}
+.starter-template{
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+h1{
+    color:rgb(0, 186, 254);
+}
+p{
+    color:rgb(226, 43, 189);
+}
+.footer{
+    text-align: center;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+}

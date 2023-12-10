@@ -1,0 +1,33 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load allauth account socialaccount %}
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
+{% block content %}
+    {% element h1 %}
+        {% trans "Sign In" %}
+    {% endelement %}
+    {%url 'account_signup' as urlsignup%}
+    <p>
+        {% blocktrans %}If you have not created an account yet, then please
+    <a href="{{urlsignup}}">sign up</a> first.{% endblocktrans %}
+    </p>
+    
+    <form class="form-account login" method="post"
+    action="{%url 'account_login'%}">
+    {% csrf_token %}
+    {%include 'form_snippet.html'%}
+    {%if redirect_field_value%}
+        <input type="hidden" name="{{redirect_field_name}}"
+        value="{{redirect_field_value}}"/>
+    {%endif%}
+    <a class="button secondaryAction d-block mb-2" href="{%url 'account_reset_password'%}">
+        {%trans "Forgot Password?"%}
+    </a>
+    <button class="btn btn-lg btn-primary btn-black" type="submit">
+        {%trans "SignIn"%}
+    </button>
+    </form>
+    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+{% endblock content %}

@@ -1,0 +1,29 @@
+{%extends 'base/base.html'%}
+{%load static%}
+{%block content %}
+<h1>
+    Hello Morning Morining.
+</h1>
+<p class="lead">
+    This is from my first app.Enjoy yourself.
+</p>
+{{request.user.get_all_permissions}}
+<div class="card-columns">
+{%for flower in flowers%}
+<div class="card">
+    <div class="card-body">
+        <h5 clas="card-title">{{flower.title}}</h5>
+        <p clas"card-text">{{flower.description | truncatechars:100}}</p>
+        {%if perms.myapp.change_flower%}
+        <a href="{%url 'edit' pk=flower.pk %}"
+        class="card-link">Edit</a>
+        {%endif%}
+        {%if perms.myapp.delete_flower%}
+        <a href="{%url 'delete' pk=flower.pk %}"
+        class="card-link">Delete</a>
+        {%endif%}
+    </div>
+</div>
+{%endfor%}
+</div>
+{%endblock%}
