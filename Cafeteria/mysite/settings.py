@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'myapp',
-    'imagekit',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -124,13 +122,7 @@ STATICFILES_DIRS=[
     BASE_DIR / 'static/',
     BASE_DIR / 'static/bootstrap/',
 ]
-
-MEDIA_ROOT='media'
-MEDIA_UR='/media/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_REDIRECT_URL='/products/'
